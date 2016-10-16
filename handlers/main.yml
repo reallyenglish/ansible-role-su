@@ -1,0 +1,6 @@
+---
+
+- name: Restart su
+  service:
+    name: su
+    state: restarted

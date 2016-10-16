@@ -1,0 +1,5 @@
+- hosts: localhost
+  roles:
+    - ansible-role-su
+  vars:
+    su_config: ""

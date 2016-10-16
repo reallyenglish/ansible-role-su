@@ -1,0 +1,36 @@
+---
+# tasks file for ansible-role-su
+
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- include: "install-{{ ansible_os_family }}.yml"
+
+- name: Create log directory
+  file:
+    path: "{{ su_log_dir }}"
+    mode: 0755
+    owner: "{{ su_user }}"
+    group: "{{ su_group }}"
+    state: directory
+  notify: Restart su
+
+- name: Create db directory
+  file:
+    path: "{{ su_db_dir }}"
+    mode: 0755
+    owner: "{{ su_user }}"
+    group: "{{ su_group }}"
+    state: directory
+  notify: Restart su
+
+- name: Create su.conf
+  template:
+    src: su.conf.j2
+    dest: "{{ su_conf_file }}"
+  notify: Restart su
+
+- name: Start su
+  service:
+    name: "{{ su_service }}"
+    enabled: true
+    state: started

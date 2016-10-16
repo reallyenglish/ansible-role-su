@@ -1,0 +1,8 @@
+su_user: su
+su_group: su
+su_log_dir: /var/log/su
+su_db_dir: "{{ __su_db_dir }}"
+su_service: su
+su_conf_dir: "{{ __su_conf_dir }}"
+su_conf_file: "{{ __su_conf_dir }}/su.conf"
+su_flags: ""
