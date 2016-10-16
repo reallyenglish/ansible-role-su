@@ -8,4 +8,3 @@
     dest: /etc/group
     regexp: '^(wheel:.*:0:root).*$'
     replace: '\1,{{ su_users | join(",") }}'
-    #with_items: "{{ su_users }}"
