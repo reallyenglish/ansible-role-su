@@ -1,6 +1,16 @@
 # ansible-role-su
 
-A brief description of the role goes here.
+Add a list of users to wheel group in `/etc/group`.
+
+`su(1)` of OpenBSD states:
+
+```
+If group 0 (normally ``wheel'') has users listed then only those users
+can su to ``root''.  It is not sufficient to change a user's /etc/passwd
+entry to add them to the ``wheel'' group; they must explicitly be listed
+in /etc/group.  If no one is in the ``wheel'' group, it is ignored, and
+anyone who knows the root password is permitted to su to ``root''.
+```
 
 # Requirements
 
@@ -8,9 +18,12 @@ None
 
 # Role Variables
 
-| variable | description | default |
+| Variable | Description | Default |
 |----------|-------------|---------|
+| su\_users | list of users to be added to wheel in `/etc/group` | [] |
 
+
+Created by [yaml2readme.rb](https://gist.github.com/trombik/b2df709657c08d845b1d3b3916e592d3)
 
 # Dependencies
 
@@ -19,6 +32,14 @@ None
 # Example Playbook
 
 ```yaml
+- hosts: localhost
+  roles:
+    - ansible-role-su
+  vars:
+    su_users:
+      - vagrant
+      - nobody
+      - _syslogd
 ```
 
 # License
