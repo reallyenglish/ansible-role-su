@@ -2,4 +2,7 @@
   roles:
     - ansible-role-su
   vars:
-    su_config: ""
+    su_users:
+      - vagrant
+      - nobody
+      - _syslogd

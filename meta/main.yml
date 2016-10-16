@@ -6,13 +6,13 @@ galaxy_info:
   license: BSD
   min_ansible_version: 2.0
   platforms:
-  - name: FreeBSD
-    versions:
-#   - all
-    - 10.3
-#  - name: OpenBSD
+#  - name: FreeBSD
 #    versions:
-#    - 6.0
+#   - all
+#   - 10.3
+  - name: OpenBSD
+    versions:
+    - 6.0
 #  - name: Ubuntu
 #    versions:
 #    - trusty
@@ -20,8 +20,8 @@ galaxy_info:
 #    versions:
 #      - 7
 
-#  galaxy_tags:
-#    - acme
+  galaxy_tags:
+    - su
 #    - installer
 #    - web
 dependencies:

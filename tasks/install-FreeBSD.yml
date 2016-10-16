@@ -1,6 +1,0 @@
----
-
-- name: Install su
-  pkgng:
-    name: su
-    state: present
