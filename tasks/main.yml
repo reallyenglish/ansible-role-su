@@ -3,7 +3,7 @@
 
 - include_vars: "{{ ansible_os_family }}.yml"
 
-- name: Adding a user to /etc/group
+- name: Add users to /etc/group
   replace:
     dest: /etc/group
     regexp: '^(wheel:.*:0:root).*$'
