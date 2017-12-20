@@ -1,10 +1,10 @@
-require 'spec_helper'
+require "spec_helper"
 
-group_file = '/etc/group'
-su_users = %w[ vagrant nobody _syslogd ]
+group_file = "/etc/group"
+su_users = %w[vagrant nobody _syslogd]
 
 case os[:family]
-when 'freebsd'
+when "freebsd"
 end
 
 su_users.each do |user|
